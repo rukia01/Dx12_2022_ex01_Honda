@@ -1,8 +1,11 @@
 ﻿#include <Windows.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include<tchar.h>
 #include<d3d12.h> //Chapter3_2_2 
 #include<dxgi1_6.h>//Chapter3_2_2 
 #include<vector>//Chapter3_2_2 
+
 
 //#define DEF_TEST
 
@@ -237,6 +240,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 	MSG	msg = {};
 	float clearColor[] = { 1.0f, 1.0f, 0.0f, 1.0f }; //黄色
+	UINT f = 0;
+
 
 	while (true) {
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
@@ -247,6 +252,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		if (msg.message == WM_QUIT) {
 			break;
 		}
+
+		f++;
+		clearColor[0] = (sin((f % 180) / 120.0f * M_PI));
+		clearColor[1] = (sin((f % 250) / 250.0f * M_PI));
+		clearColor[2] = (sin((f % 520) / 340.0f * M_PI));
+
+
+
 
 		// Chapter3_3_6
 		// スワップチェーンを動作
