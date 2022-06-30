@@ -239,7 +239,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	ShowWindow(hwnd, SW_SHOW);
 
 	MSG	msg = {};
-	float clearColor[] = { 1.0f, 1.0f, 0.0f, 1.0f }; //黄色
+	float clearColor[] = { 0.6f, 0.8f, 0.5f, 1.0f }; //黄色
 	UINT f = 0;
 
 
@@ -253,10 +253,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			break;
 		}
 
+
 		f++;
-		clearColor[0] = (sin((f % 180) / 120.0f * M_PI));
-		clearColor[1] = (sin((f % 250) / 250.0f * M_PI));
-		clearColor[2] = (sin((f % 520) / 340.0f * M_PI));
+		clearColor[0] = (sin((f % 220) / 190.0f * M_PI));
+		clearColor[1] = (sin((f % 340) / 280.0f * M_PI));
+		clearColor[2] = (sin((f % 520) / 360.0f * M_PI));
 
 
 
